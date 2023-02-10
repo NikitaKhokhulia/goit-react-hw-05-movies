@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes, Outlet } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
 // import Cast from './Cast/Cast';
 // import Reviews from './Reviews/Reviews';
