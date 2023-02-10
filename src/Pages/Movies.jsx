@@ -16,11 +16,11 @@ const Movies = () => {
     if (query === '') {
       return;
     }
+
     getMoviesByName(query).then(res => {
       setMoviesByName(res.data.results);
     });
   }, [query]);
-
 
   const onSubmitHandler = data => {
     setQuery(data);
@@ -30,10 +30,11 @@ const Movies = () => {
     setInputValue(evt.target.value);
   };
 
-  const updateQueryString = query => {
+  const updateQueryString = (query, value) => {
     const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
+
   const onSubmit = evt => {
     evt.preventDefault();
     onSubmitHandler(inputValue);

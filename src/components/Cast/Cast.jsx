@@ -37,6 +37,3 @@ const Cast = () => {
 };
 
 export default Cast;
-
-// const onCastClick = data => {
-//   setCast(data);

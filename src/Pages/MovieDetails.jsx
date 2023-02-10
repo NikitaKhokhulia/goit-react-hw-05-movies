@@ -13,12 +13,13 @@ const MovieDetails = () => {
       setMovie({ ...res.data });
     });
   }, [movieId]);
-
-
+  console.log(location);
 
   return (
-    <div>
-      <Link to={location.state.from}>Go back</Link>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Link to={{ pathname: location.state.from === '/' ? '/' : '/movies' }}>
+        Go back
+      </Link>
 
       {movie && (
         <div
@@ -54,16 +55,21 @@ const MovieDetails = () => {
               ))}
             </ul>
           </div>
-          <Outlet />
         </div>
       )}
+
+      <Outlet />
       <p>Additional information</p>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={{ from: location }}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={{ from: location }}>
+            Reviews
+          </Link>
         </li>
       </ul>
     </div>

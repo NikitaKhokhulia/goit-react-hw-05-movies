@@ -10,7 +10,6 @@ const Reviews = () => {
     getMovieReviews(movieId).then(res => setReviews(res.data.results));
   }, [movieId]);
 
-
   return (
     <ul>
       {reviews.length > 1 ? (
